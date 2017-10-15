@@ -6,11 +6,13 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+
 /**
- * Created by rose on 10/7/17.
+ * Created by rose on 10/11/17.
  */
-@TeleOp(name = "H-Drive Test Oct. 7")
-public class TeleOp_HDrive extends OpMode {
+
+@TeleOp(name = "Trigger H-Drive Test Oct. 11")
+public class Trigger_HDrive extends OpMode {
 
     private Robot robot = new Robot();
 
@@ -40,7 +42,8 @@ public class TeleOp_HDrive extends OpMode {
         float r_stick = gamepad1.right_stick_y;
         float l_stick = gamepad1.left_stick_y;
         boolean up = gamepad2.dpad_up;
-        boolean r_Bumper = gamepad1.right_bumper;
+        float r_trigger = gamepad1.right_trigger;
+        float l_trigger = gamepad1.left_trigger;
         float l_stick_x = gamepad1.left_stick_x;
         float r_stick_x = gamepad1.right_stick_x;
 
@@ -69,25 +72,18 @@ public class TeleOp_HDrive extends OpMode {
 
         //Comment line below
 
-        // Basically, if the left stick x value is greater than its y value and the right stick's x value, turn on side mode.
-        if (test(l_stick_x,l_stick,r_stick) == 1) {
-            sideMode = true;
-        }
-        else {
-            sideMode = false;
-        }
-        //To here
+            if(r_trigger>l_trigger){
+            robot.middle.setPower(r_trigger);
+            }
+            else{
+            robot.middle.setPower(-l_trigger);
+            }
 
-        //If sidemode is true, the middle motor's power is set to the left stick's x value. It moves the bot left or right.
-        if (!sideMode){
             robot.left_b.setPower(l_stick);
             robot.left_f.setPower(l_stick);
             robot.right_b.setPower(r_stick);
             robot.right_f.setPower(r_stick);
-            robot.middle.setPower(0);
-        }
-        else {
-            robot.middle.setPower(l_stick_x);
-        }
+
+
     }
 }

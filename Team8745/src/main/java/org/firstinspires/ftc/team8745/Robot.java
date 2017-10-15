@@ -29,8 +29,8 @@ public class Robot {
         right_f = hardwareMap.dcMotor.get("motor-right");
 
         //Back Motors
-        left_b = hardwareMap.dcMotor.get("motor-leftBack");
-        right_b = hardwareMap.dcMotor.get("motor-rightBack");
+        left_b = hardwareMap.dcMotor.get("motor-leftBACK");
+        right_b = hardwareMap.dcMotor.get("motor-rightBACK");
 
         middle = hardwareMap.dcMotor.get("motor-MIDDLE");
 
