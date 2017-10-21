@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Created by rose on 10/8/17.
  */
 
-public class Robot {
+public class HDrive_BadRobot {
 
     public ColorSensor colorSensor;
     public Servo jewelKnockOff;

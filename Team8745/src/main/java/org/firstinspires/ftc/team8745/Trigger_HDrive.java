@@ -1,24 +1,22 @@
 package org.firstinspires.ftc.team8745;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
 /**
  * Created by rose on 10/11/17.
  */
-
+@Disabled
 @TeleOp(name = "Trigger H-Drive Test Oct. 11")
 public class Trigger_HDrive extends OpMode {
 
-    private Robot robot = new Robot();
+    private HDrive_BadRobot HDriveBadRobot = new HDrive_BadRobot();
 
     @Override
     public void init() {
-        robot.init(hardwareMap);
+        HDriveBadRobot.init(hardwareMap);
 
 
     }
@@ -73,16 +71,16 @@ public class Trigger_HDrive extends OpMode {
         //Comment line below
 
             if(r_trigger>l_trigger){
-            robot.middle.setPower(r_trigger);
+            HDriveBadRobot.middle.setPower(r_trigger);
             }
             else{
-            robot.middle.setPower(-l_trigger);
+            HDriveBadRobot.middle.setPower(-l_trigger);
             }
 
-            robot.left_b.setPower(l_stick);
-            robot.left_f.setPower(l_stick);
-            robot.right_b.setPower(r_stick);
-            robot.right_f.setPower(r_stick);
+            HDriveBadRobot.left_b.setPower(l_stick);
+            HDriveBadRobot.left_f.setPower(l_stick);
+            HDriveBadRobot.right_b.setPower(r_stick);
+            HDriveBadRobot.right_f.setPower(r_stick);
 
 
     }

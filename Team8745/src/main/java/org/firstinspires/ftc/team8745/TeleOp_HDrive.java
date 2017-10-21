@@ -1,22 +1,21 @@
 package org.firstinspires.ftc.team8745;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.HardwareMap;
 
 /**
  * Created by rose on 10/7/17.
  */
+@Disabled
 @TeleOp(name = "H-Drive Test Oct. 7")
 public class TeleOp_HDrive extends OpMode {
 
-    private Robot robot = new Robot();
+    private HDrive_BadRobot HDriveBadRobot = new HDrive_BadRobot();
 
     @Override
     public void init() {
-        robot.init(hardwareMap);
+        HDriveBadRobot.init(hardwareMap);
 
 
     }
@@ -80,14 +79,14 @@ public class TeleOp_HDrive extends OpMode {
 
         //If sidemode is true, the middle motor's power is set to the left stick's x value. It moves the bot left or right.
         if (!sideMode){
-            robot.left_b.setPower(l_stick);
-            robot.left_f.setPower(l_stick);
-            robot.right_b.setPower(r_stick);
-            robot.right_f.setPower(r_stick);
-            robot.middle.setPower(0);
+            HDriveBadRobot.left_b.setPower(l_stick);
+            HDriveBadRobot.left_f.setPower(l_stick);
+            HDriveBadRobot.right_b.setPower(r_stick);
+            HDriveBadRobot.right_f.setPower(r_stick);
+            HDriveBadRobot.middle.setPower(0);
         }
         else {
-            robot.middle.setPower(l_stick_x);
+            HDriveBadRobot.middle.setPower(l_stick_x);
         }
     }
 }
