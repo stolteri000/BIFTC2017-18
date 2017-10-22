@@ -1,8 +1,3 @@
-
-
-
-
-
 package org.firstinspires.ftc.team8745;
 
         import com.qualcomm.robotcore.eventloop.opmode.OpMode;
